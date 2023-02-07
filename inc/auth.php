@@ -9,7 +9,7 @@
  * Plugin URI: https://github.com/WP-API/Basic-Auth
  */
 
-function json_basic_auth_handler($user)
+function yescontent_json_basic_auth_handler($user)
 {
     global $wp_json_basic_auth_error;
 
@@ -34,11 +34,19 @@ function json_basic_auth_handler($user)
      * recursion and a stack overflow unless the current function is removed from the determine_current_user
      * filter during authentication.
      */
-    remove_filter('determine_current_user', 'json_basic_auth_handler', 20);
+    remove_filter(
+        'determine_current_user',
+        'yescontent_json_basic_auth_handler',
+        20
+    );
 
     $user = wp_authenticate($username, $password);
 
-    add_filter('determine_current_user', 'json_basic_auth_handler', 20);
+    add_filter(
+        'determine_current_user',
+        'yescontent_json_basic_auth_handler',
+        20
+    );
 
     if (is_wp_error($user)) {
         $wp_json_basic_auth_error = $user;
@@ -49,9 +57,9 @@ function json_basic_auth_handler($user)
 
     return $user->ID;
 }
-add_filter('determine_current_user', 'json_basic_auth_handler', 20);
+add_filter('determine_current_user', 'yescontent_json_basic_auth_handler', 20);
 
-function json_basic_auth_error($error)
+function yescontent_json_basic_auth_error($error)
 {
     // Passthrough other errors
     if (!empty($error)) {
@@ -62,4 +70,4 @@ function json_basic_auth_error($error)
 
     return $wp_json_basic_auth_error;
 }
-add_filter('rest_authentication_errors', 'json_basic_auth_error');
+add_filter('rest_authentication_errors', 'yescontent_json_basic_auth_error');
