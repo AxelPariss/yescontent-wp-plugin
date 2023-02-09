@@ -16,7 +16,7 @@
  * Plugin Name:       YesContent
  * Plugin URI:        https://yescontent.rocks
  * Description:       Plateforme de gestion et publication de contenu
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Axel Paris
  * Author URI:        https://yescontent.rocks
  * License:           GPL-2.0+
