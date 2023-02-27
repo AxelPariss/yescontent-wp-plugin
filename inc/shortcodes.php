@@ -6,21 +6,19 @@ function shortcode_yescontent_button($atts)
         'url' => '#',
         'target' => '_blank',
         'rel' => 'noreferrer noopener',
-        'label' => 'Découvrir l’offre',
+        'text' => 'Découvrir l’offre',
     ];
     $a = shortcode_atts($default, $atts);
 
     return '<div class="is-layout-flex wp-block-buttons">
     <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="' .
         $a['url'] .
-        '"
-        target="' .
+        '" target="' .
         $a['target'] .
         '" rel="' .
         $a['rel'] .
-        '">
-        ' .
-        $a['label'] .
+        '">' .
+        $a['text'] .
         '</a></div>
     </div>';
 }
