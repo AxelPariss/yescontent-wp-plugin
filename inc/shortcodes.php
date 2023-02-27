@@ -1,6 +1,6 @@
 <?php
 
-function shortcode_yescontent_offer_button($atts)
+function shortcode_yescontent_button($atts)
 {
     $default = [
         'url' => '#',
@@ -25,4 +25,4 @@ function shortcode_yescontent_offer_button($atts)
     </div>';
 }
 
-add_shortcode('yescontent_offer_button', 'shortcode_yescontent_offer_button');
+add_shortcode('yescontent_button', 'shortcode_yescontent_button');
