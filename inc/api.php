@@ -16,7 +16,7 @@ class Yescontent_API
 
     public function yescontent_rest_init()
     {
-        register_rest_route($this->namespace, $this->post_type, [
+        register_rest_route($this->namespace, 'content', [
             'methods' => WP_REST_Server::READABLE,
             'callback' => [$this, 'query_rest_content'],
         ]);
