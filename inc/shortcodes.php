@@ -19,8 +19,9 @@ function shortcode_yescontent_button($atts)
         $a['rel'] .
         '">' .
         $a['text'] .
-        '</a></div>
-    </div></div>';
+        '</a>
+        </div>
+    </div>';
 }
 
 add_shortcode('yescontent_button', 'shortcode_yescontent_button');
