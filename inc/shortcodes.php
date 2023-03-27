@@ -20,7 +20,7 @@ function shortcode_yescontent_button($atts)
         '">' .
         $a['text'] .
         '</a></div>
-    </div>';
+    </div></div>';
 }
 
 add_shortcode('yescontent_button', 'shortcode_yescontent_button');
